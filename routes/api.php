@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/province/{id}/cities', [App\Http\Controllers\HomeController::class, 'getCities']);
+Route::post('/cities',   [App\Http\Controllers\HomeController::class, 'searchCities']);
